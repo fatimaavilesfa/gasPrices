@@ -1,0 +1,33 @@
+{
+  "name": "fatima_gasprices",
+  "version": "1.0.0",
+  "description": "KSU project",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/kuniversity/nextgen-2020_1/fatima_gasprices.git"
+  },
+  "keywords": [
+    "KSU"
+  ],
+  "author": "Fatima Aviles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/kuniversity/nextgen-2020_1/fatima_gasprices/issues"
+  },
+  "homepage": "https://gitlab.com/kuniversity/nextgen-2020_1/fatima_gasprices#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fast-xml-parser": "^3.16.0",
+    "he": "^1.2.0",
+    "nedb": "^1.8.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="js/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Precios de Gasolina en Mexico</h1>
+            <button type="button" onclick="nearMe()">Near me</button>
+            <!-- <button type="button" onclick="getData()">Get Data</button>  -->
+            <button type="button" onclick="clearTitle(), changePage(1)">Lista de Gasolinerias</button>
+            <h3 id="myLocation"></h3>
+            <div class="search">
+                <input type="text" id="estado"  placeholder="Busqueda por estado">
+                <input type="text" id="ciudad"  placeholder="Busqueda por ciudad">
+                <input type="text" id="colonia"  placeholder="Busqueda por colonia">
+                <input class="button" type="button" id="button" onclick="filterData(), changePage(1)" value="Buscar">
+            </div>
+        </header>
+        <table id="listingTable"></table>
+        <footer>
+            <a href="javascript:prevPage()" id="btn_prev">Prev</a>
+            <a href="javascript:nextPage()" id="btn_next">Next</a>
+            page: <span id="page"></span></br>
+        </footer>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/display.js"></script>
+    </body>
+</html>
