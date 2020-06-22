@@ -39,7 +39,6 @@ function filterData() {
                     ciudadesToFilter.add(Object.values(gasData)[key]._id); 
                 }
                 if(Object.values(gasData)[key][mkey][1][lkey][2] === colonia) {
-                    console.log(Object.values(gasData)[key][mkey][1][lkey][2], Object.values(gasData)[key][mkey][1][lkey][2] === colonia)
                     coloniasToFilter.add(Object.values(gasData)[key]._id);
                 }
             }

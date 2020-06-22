@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3333;
 //database sub set of MongoDB
 const DataStore = require('nedb');
 //require fetch to be able to make api calls 
@@ -10,9 +10,11 @@ const fs = require('fs');
 const parser = require('fast-xml-parser');
 const he = require('he');
 
+require('custom-env').env();
+
 //creating file to store the data
 const database = new DataStore('database.db');
-database.loadDatabase(e=>console.log(e));
+database.loadDatabase(e=>(e));
 
 
 
@@ -53,7 +55,7 @@ async function getAddresses() {
                 name: "",
                 gasInfo: []
             }
-            var rawAddress = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${e.location.y+","+e.location.x}&location_type=ROOFTOP&key=AIzaSyAFAk-2AVZIMAchSRQf_g1kzi8coR6Vq0w`);
+            var rawAddress = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${e.location.y+","+e.location.x}&location_type=ROOFTOP&key=${process.env.TOKEN}`);
             var addresses = await rawAddress.json();
             try {
                 locationData[Object.values(e.attr)].address = addresses.results[0].address_components.map(e => Object.values(e)[0]);
@@ -129,7 +131,7 @@ app.get('/getMyAdress/:latlon', async (req, res) => {
     const latlong = req.params.latlon.split(",");
     const lat = latlong[0];
     const lon = latlong[1];
-    const api_url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&location_type=ROOFTOP&key=`
+    const api_url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&location_type=ROOFTOP&key=${process.env.TOKEN}`
     const fetch_response = await fetch(api_url);
     const json = await fetch_response.json();
     res.json(json);

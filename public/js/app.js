@@ -59,7 +59,6 @@ function getCurrentLocation() {
       const res_json = await fetch(api_url);
       const json = await res_json.json();
       const geolocation = json.results[0].address_components.map(e => Object.values(e)[0]);
-            console.log(geolocation);
             mylocation = geolocation.slice(2, 5);
            
     });
