@@ -22,7 +22,7 @@
   "homepage": "https://gitlab.com/kuniversity/nextgen-2020_1/fatima_gasprices#readme",
   "dependencies": {
     "custom-env": "^2.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fast-xml-parser": "^3.16.0",
     "he": "^1.2.0",
     "nedb": "^1.8.0",
